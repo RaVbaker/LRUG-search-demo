@@ -21,6 +21,8 @@ gem 'jquery-rails'
 
 gem 'sunspot_rails' # support for rails
 gem 'sunspot_solr' # inhouse solr instance
+# rails generate sunspot_rails:install
+# bundle exec rake sunspot:solr:start
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
