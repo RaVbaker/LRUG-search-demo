@@ -1,3 +1,47 @@
+== Apache Solr hello world with ruby SunSpot!
+
+This is my test app for sunspot. It was shown on LRUG in Lodz 8 December 2011.
+
+= How to use this project?
+
+1. Download from github
+  
+  git clone ....
+
+2. Start app:
+    
+  bundle install
+    
+3. Create database and seed products: 
+
+  rake db:create
+  
+4. Run solr:
+
+  rake sunspot:solr:start
+  
+5. Fill solr index:
+
+  rake sunspot:solr:index
+  
+6. Enjoy:
+
+  rails server
+  open http://localhost:3000/
+  
+
+= Here are links from presentation:
+
+- https://github.com/sunspot/sunspot/blob/master/README.md
+- http://lucene.apache.org/solr/features.html#Solr+in+a+Nutshell 
+- https://github.com/sunspot/sunspot
+- http://localhost:8982/solr/admin/
+
+
+
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
