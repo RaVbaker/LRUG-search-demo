@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'JSON'
+products = JSON.load open(Rails.root.to_s+"/db/seeds/products.json")
+Product.transaction do
+  Product.delete_all
+  products.each do |product|
+    Product.create product
+  end
+end
