@@ -1,4 +1,10 @@
 SearchDemo::Application.routes.draw do
+  get "search/index"
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +54,7 @@ SearchDemo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'search#index'
 
   # See how all your routes lay out with "rake routes"
 

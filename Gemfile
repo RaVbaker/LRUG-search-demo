@@ -17,7 +17,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+                                       
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 gem 'sunspot_rails' # support for rails
 gem 'sunspot_solr' # inhouse solr instance
@@ -40,3 +41,5 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem "devise"

@@ -1,0 +1,29 @@
+<h1>Demo search</h1>
+
+<%= form_tag( root_path, method: :get) do %>
+  <%= text_field_tag :q, params[:q]-%>
+  <%= submit_tag "Search", name:nil %>
+<% end -%>
+<hr />
+
+
+<% if @search %>
+  <ol>
+  <% @search.each_hit_with_result do |hit, product| %>
+    <li>
+      <h2 title="Hit: <%= hit.score %>"><%= product.name -%></h2>
+      <p><small><%= product.category_name %></small></p>
+      <p>Price: $<%= product.price%></p>
+      <p title="<%= product.description %>"><%= truncate product.description, length: 300 -%></p>
+    
+    </li>
+  <% end-%>
+  </ol>
+
+  <h3>Facet categories</h3>
+  <ul>
+  <% @search.facet(:category_name).rows.each do |facet| %>
+    <li><%= facet.value %> (<%= facet.count %>)</li>
+  <% end -%>
+  </ul>     
+<% end -%>
